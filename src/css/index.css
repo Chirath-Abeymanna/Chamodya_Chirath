@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Kameron"; /* Use the same name as in tailwind.config.js */
+  src: url("../fonts/Kameron/static/Kameron-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "spartan"; /* Use the same name as in tailwind.config.js */
+  src: url("../fonts/League_Spartan/static/LeagueSpartan-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lexend"; /* Use the same name as in tailwind.config.js */
+  src: url("../fonts/Lexend_Tera/LexendTera-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
