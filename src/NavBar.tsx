@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
         <div className="ProfilePic w-profile rounded-2xl m-10 items-center ">
           <img
             className="profile rounded-circle w-36 h-36 ml-20"
-            src="src/assets/profile.jpg"
+            src="/Chamodya_Chirath/src/assets/profile.jpg"
             alt="Profile pic"
           />
         </div>
