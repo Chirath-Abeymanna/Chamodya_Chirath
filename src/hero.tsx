@@ -61,7 +61,7 @@ const Hero = () => {
       >
         <div className={`${animate ? "fade-in-up fade-delay-1" : ""}`}>
           <h1 className="text-xl mb-5">Little About me</h1>
-          <p className="text-[12px] space-y-8 mb-4 leading-5 text-[#CFCFCF]">
+          <p className="text-[12px] space-y-8 mb-4 leading-5 text-[#CFCFCF] overflow-hidden">
             I am a Computer Science undergraduate with a passion for creating
             innovative solutions. Currently, I am specializing in Robotics
             Engineering and Machine Learning, while also nurturing a strong
