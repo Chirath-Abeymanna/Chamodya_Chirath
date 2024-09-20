@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="relative w-full bg-hero h-[100vh] flex flex-col justify-center overflow-x-hidden"
+      className="relative w-full bg-hero h-full flex flex-col justify-center overflow-x-hidden"
     >
       <div className="header flex relative">
         <div
