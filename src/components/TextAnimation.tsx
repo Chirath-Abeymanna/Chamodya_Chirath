@@ -17,7 +17,7 @@ const TextAnimation = ({ paragraph }: { paragraph: string }) => {
   const words = paragraph.split("");
 
   return (
-    <h2>
+    <h2 ref = {ref}>
       {words.map((word, index) => {
         const opacity = useTransform(
           scrollYProgress,
