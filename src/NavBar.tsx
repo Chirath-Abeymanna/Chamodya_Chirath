@@ -17,9 +17,9 @@ const NavBar: React.FC = () => {
   return (
     <div className="NavBar bg-nav-bg fixed h-full w-navbar text-white transition-all">
       <div className="">
-        <div className="ProfilePic w-profile ml-auto mr-auto mt-10 mb-6 items-center ">
+        <div className="ProfilePic w-profile ml-auto mr-auto mt-10 mb-6 items-center">
           <img
-            className="profile rounded-circle w-36 h-36 ml-auto mr-auto"
+            className="profile rounded-circle w-36 h-36 ml-auto mr-auto object-cover"
             src={profileImage}
             alt="Profile pic"
           />
