@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./css/navbar.css";
 import "./css/App.css";
+import profileImage from "./assets/profile.jpg";
 
 const NavBar: React.FC = () => {
   const [visibleIndex, setVisibleIndex] = useState(0);
@@ -16,10 +17,10 @@ const NavBar: React.FC = () => {
   return (
     <div className="NavBar bg-nav-bg fixed h-full w-navbar text-white transition-all">
       <div className="">
-        <div className="ProfilePic w-profile rounded-2xl m-10 items-center ">
+        <div className="ProfilePic w-profile ml-auto mr-auto mt-10 mb-6 items-center ">
           <img
-            className="profile rounded-circle w-36 h-36 ml-20"
-            src="/Chamodya_Chirath/src/assets/profile.jpg"
+            className="profile rounded-circle w-36 h-36 ml-auto mr-auto"
+            src={profileImage}
             alt="Profile pic"
           />
         </div>
@@ -49,7 +50,7 @@ const NavBar: React.FC = () => {
             Web Developer
           </h4>
         </div>
-        <ul className="ml-28 text-2xl space-y-10">
+        <ul className="ml-[5vw] text-2xl space-y-10">
           <li className="">
             <a href="#hero" className="active ">
               <i className="fa fa-mug-hot"></i> Home

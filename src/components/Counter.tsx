@@ -27,7 +27,7 @@ const ProjectCard: React.FC<CounterProps> = ({
     return () => clearInterval(interval);
   }, [endNumber, duration]);
 
-  return <h1 className="text-5xl mb-5 font-Lexend text-center">{count}+</h1>;
+  return <h1 className="text-clamp mb-5 font-Lexend text-center">{count}+</h1>;
 };
 
 export default ProjectCard;

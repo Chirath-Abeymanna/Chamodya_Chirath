@@ -1,0 +1,33 @@
+:root {
+  --backgroundColor: #cfcfcf;
+}
+
+.Reveal {
+  overflow-x: hidden;
+  padding-right: 30%;
+  padding-top: 30%;
+  padding-left: 20%;
+}
+
+.Reveal-Text {
+  position: relative;
+  font-size: clamp(30px, 5vw, 100px);
+  padding: 1vw;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #252525;
+  filter: drop-shadow(0 0 0.06rem rgb(99, 94, 95));
+}
+
+/* Adjust spacing to ensure there's enough space for the scroll trigger */
+.spacing-small {
+  height: 50vh;
+}
+
+.spacing {
+  height: 100vh;
+  background-color: var(
+    --backgroundColor
+  ); /* Add background color for visual testing */
+}

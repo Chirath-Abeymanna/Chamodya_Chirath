@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .flex {
@@ -38,9 +39,5 @@ body {
 
 .fade-delay-3 {
   opacity: 0;
-  animation-delay: 1.2s;
-}
-
-.fade-delay-4 {
-  animation-delay: 1.2s;
+  animation-delay: 1s;
 }

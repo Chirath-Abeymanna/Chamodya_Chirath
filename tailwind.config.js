@@ -5,6 +5,8 @@ export default {
     "./src/App.tsx",
     "./src/NavBar.tsx",
     "./src/hero.tsx",
+    "./src/Education.tsx",
+    "./src/components/TextAnimation.tsx",
   ],
   theme: {
     extend: {
@@ -12,6 +14,9 @@ export default {
         profile: "15vw",
         navbar: "30vw",
         hero: "70vw",
+      },
+      fontSize: {
+        clamp: "clamp(20px, 3vw, 45px)",
       },
       textColor: {
         name: "#25C0E7",
@@ -30,6 +35,7 @@ export default {
         Kameron: "Kameron",
         spartan: "spartan",
         Lexend: "Lexend",
+        poppins: "poppins",
       },
     },
   },
