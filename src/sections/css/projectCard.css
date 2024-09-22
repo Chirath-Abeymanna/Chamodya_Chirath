@@ -1,0 +1,165 @@
+.cards {
+  position: relative;
+  display: grid;
+  left: 0%;
+  right: 0%;
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
+  justify-items: center;
+  grid-gap: 0px 50px;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.buttonText {
+  z-index: 2;
+  position: relative;
+  top: 15%;
+  left: 10px;
+}
+
+.all-projects {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 11vw;
+  height: 5vh;
+  margin-left: 15px;
+  padding: 5px 0px;
+  border-radius: 5px;
+  font-family: "poppins";
+  font-weight: 600;
+  background-color: white;
+  font-size: clamp(9px, 1vw, 50px);
+  transition: ease-in-out 0.3s;
+  z-index: 0;
+}
+
+.all-projects:hover,
+.all-projects:hover::after {
+  width: 11vw;
+  opacity: 1;
+  color: white;
+}
+
+.all-projects::after {
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  top: 0;
+  left: 0;
+  background-color: #0f0f34;
+  width: 1vw;
+  height: 5vh;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  z-index: 1;
+}
+
+.image {
+  height: 30vh;
+  width: 60vw;
+  object-fit: cover;
+  object-position: center 3px;
+}
+
+.language {
+  position: relative;
+  display: inline-block;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.dot {
+  position: absolute !important;
+  top: 8px;
+  left: -15px;
+  margin-right: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-python {
+  background-color: #306998 !important; /* Example color for Python */
+}
+
+.dot-javascript {
+  background-color: #f7df1e; /* Example color for JavaScript */
+}
+
+.dot-html {
+  background-color: #e44d26; /* Example color for HTML */
+}
+
+.dot-css {
+  background-color: #264de4; /* Example color for CSS */
+}
+
+.dot-java {
+  background-color: #e42626;
+}
+
+/* Add a default color for unknown languages */
+.dot-default {
+  background-color: #aaa; /* Gray color for unknown languages */
+}
+
+.fa-arrow-right-long {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 900;
+  top: 10%;
+  right: -5rem;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  transform: rotate(-30deg);
+}
+
+.view-project {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  font-size: clamp(40px, 3rem, 80px);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+.card {
+  margin-bottom: 5rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+.card::after {
+  @apply rounded-md;
+  content: "";
+  position: absolute;
+  top: 55vh;
+  left: 0;
+  background-color: #1182b6;
+  width: 60vw;
+  height: 3vh;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  z-index: 0;
+}
+
+.card:hover .view-project {
+  opacity: 1;
+}
+
+.card:hover .fa-arrow-right-long {
+  opacity: 1;
+}
+
+.card:hover::after {
+  opacity: 1;
+  top: 0;
+  height: 60vh;
+}

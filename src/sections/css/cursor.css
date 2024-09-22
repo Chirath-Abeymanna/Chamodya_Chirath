@@ -1,0 +1,26 @@
+/* Custom cursor */
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgb(154, 154, 154);
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(25, 111, 172);
+}
+
+.cursor-dot,
+.cursor-outline {
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 999;
+  pointer-events: none;
+}

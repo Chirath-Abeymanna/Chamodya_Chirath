@@ -1,64 +1,57 @@
-import NavBar from "./NavBar";
-import Hero from "./hero";
-import Education from "./Education";
+import NavBar from "./sections/NavBar";
+import Hero from "./sections/hero";
+import Education from "./sections/Education";
+import Projects from "./sections/Projects";
+import Contact from "./sections/contact";
+import Cursor from "./sections/components/cursor";
 import "./css/App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 function App() {
-  const educationRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null); // Ref for the scrollable content area
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
-  //           const target = educationRef.current;
-  //           if (target) {
-  //             const targetPosition =
-  //               target.getBoundingClientRect().top + window.scrollY;
-  //             const targetHeight = target.clientHeight;
-  //             const viewportHeight = window.innerHeight;
-
-  //             // Calculate the scroll position to bring the section fully into view
-  //             contentRef.current?.scrollTo({
-  //               top: targetPosition - (viewportHeight - targetHeight),
-  //               behavior: "smooth",
-  //             });
-  //           }
-  //         }
-  //       });
-  //     },
-  //     {
-  //       threshold: [0.35], // Trigger when 35% of the Education section is in view
-  //     }
-  //   );
-
-  //   const target = educationRef.current;
-  //   if (target) {
-  //     observer.observe(target);
-  //   }
-
-  //   return () => {
-  //     if (target) {
-  //       observer.unobserve(target);
-  //     }
-  //   };
-  // }, []);
-
   return (
-    <div className="flex">
-      <section className="w-[30%]">
+    <div className="flex font-spartan">
+      <Cursor />
+      <section className="w-[30%] mr-2">
         <NavBar />
       </section>
-      <section className="w-[70%]">
-        <section className="h-screen">
+      <section className="w-[70%] ">
+        <motion.section
+          id="hero"
+          className="h-screen"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Hero />
-        </section>
-        <section className="h-screen">
+        </motion.section>
+        <motion.section
+          id="education"
+          className="relative min-h-screen"
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <Education />
-        </section>
+        </motion.section>
+        <motion.section
+          id="projects"
+          className="relative min-h-screen"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Projects />
+        </motion.section>
+        <motion.section
+          id="contact"
+          className="relative min-h-screen"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <Contact />
+        </motion.section>
       </section>
     </div>
   );

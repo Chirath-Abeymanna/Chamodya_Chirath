@@ -3,25 +3,34 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-const ScrollParagraph = ({ text }: { text: string }) => {
+const ScrollParagraph = ({
+  text,
+  changeSpeed,
+}: {
+  text: string;
+  changeSpeed: number;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: [
-      [0.6, 1],
-      [1, 0.6],
+      [0.4, 1],
+      [1, 0.4],
     ],
   });
-  const words = text.split("");
+  const words = text.split(" ");
 
   return (
-    <div ref={ref} className="text-8xl text-white text-center">
+    <div
+      ref={ref}
+      className="text-8xl text-white text-center font-poppins pt-[30vh]"
+    >
       {words.map((word, index) => {
         const opacity = useTransform(
           scrollYProgress,
-          [0 + index * 0.1, 0.2 + index * 0.1],
-          [0.1, 1]
+          [0 + index * changeSpeed, changeSpeed + index * changeSpeed],
+          [0.2, 1]
         );
 
         return (

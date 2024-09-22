@@ -3,10 +3,15 @@ export default {
   content: [
     "./index.html",
     "./src/App.tsx",
-    "./src/NavBar.tsx",
-    "./src/hero.tsx",
-    "./src/Education.tsx",
-    "./src/components/TextAnimation.tsx",
+    "./src/sections/NavBar.tsx",
+    "./src/sections/hero.tsx",
+    "./src/sections/projects.tsx",
+    "./src/sections/Education.tsx",
+    "./src/sections/Contact.tsx",
+    ".src/sections/components/ProjectCard.tsx",
+    "./src/sections/components/TextAnimation.tsx",
+    "./src/sections/components/TimelineElements.tsx",
+    "./src/sections/components/ContactForm.tsx",
   ],
   theme: {
     extend: {
@@ -26,7 +31,9 @@ export default {
       },
       backgroundColor: {
         "nav-bg": "#121213",
-        hero: "#1E1E1E",
+        background: "#0B0B0C",
+        blue: "#1182B6",
+        card: "#101014",
       },
       borderRadius: {
         circle: "50%",
@@ -39,5 +46,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

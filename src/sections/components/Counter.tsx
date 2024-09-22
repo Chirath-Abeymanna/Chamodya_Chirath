@@ -1,3 +1,5 @@
+// Counter component to animate the numbers in cards in hero section
+
 import { useState, useEffect } from "react";
 
 interface CounterProps {
@@ -5,10 +7,7 @@ interface CounterProps {
   duration?: number;
 }
 
-const ProjectCard: React.FC<CounterProps> = ({
-  endNumber,
-  duration = 2000,
-}) => {
+const Counter: React.FC<CounterProps> = ({ endNumber, duration = 2000 }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const ProjectCard: React.FC<CounterProps> = ({
     return () => clearInterval(interval);
   }, [endNumber, duration]);
 
-  return <h1 className="text-clamp mb-5 font-Lexend text-center">{count}+</h1>;
+  return <p className="text-clamp mb-5 font-Lexend text-center">{count}+</p>;
 };
 
-export default ProjectCard;
+export default Counter;

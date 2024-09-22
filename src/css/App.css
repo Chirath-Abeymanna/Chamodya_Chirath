@@ -3,7 +3,21 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* scroll-behavior: smooth; */
+  cursor: none;
+  background-color: white;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+  @apply bg-slate-700;
+  width: 8px;
+  cursor: default;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sky-500;
+  height: 20%;
+  cursor: default;
 }
 
 .flex {

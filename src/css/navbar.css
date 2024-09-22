@@ -1,3 +1,4 @@
+/* Typewriter Animation */
 @keyframes typewriter {
   40%,
   60% {
@@ -8,10 +9,18 @@
   }
 }
 
+.NavBar .profile {
+  aspect-ratio: 1;
+  width: 12vw;
+  border-radius: 50%;
+  margin: 0;
+}
+
 .NavBar li a {
   position: relative;
   padding: 0 1rem;
   display: inline-block;
+  color: #ffffff;
 }
 
 .NavBar li a::after {
@@ -26,19 +35,24 @@
   transition: width 0.3s ease;
 }
 
+/* Hover and Active Underline */
 .NavBar li a:hover::after,
 .NavBar li a.active::after {
   width: 80%;
 }
 
+/* Ensure Active State Overrides Hover */
 .NavBar li a.active::after {
   width: 50%;
 }
 
+/* Text color on hover and active using Tailwind @apply */
 .NavBar li a:hover,
 .NavBar li a.active {
   @apply text-nav;
 }
+
+/* Typewriter Animation for the Name */
 #name {
   position: relative;
   top: 6px;
@@ -47,6 +61,7 @@
   padding: 0;
   margin: 0;
 }
+
 #name::before {
   @apply bg-nav-bg;
   content: "";

@@ -1,0 +1,11 @@
+.field-button {
+  border: 1px solid;
+  padding: 5px;
+  margin: 7px 10px;
+  border-radius: 2px;
+}
+
+.field-button:hover {
+  color: white;
+  background-color: #3c829a;
+}
