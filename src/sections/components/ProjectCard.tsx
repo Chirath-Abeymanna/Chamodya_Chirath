@@ -22,15 +22,14 @@ const ProjectCard = ({
   Image: string;
 }) => {
   const languageArray = languages.split(","); // Convert languages string to an array
-  console.log(languageArray);
 
   return (
-    <div className="card relative pb-10  bg-card w-[30vw] h-auto rounded-md text-white">
+    <div className="card relative pb-10  bg-card w-3xl max-w-[500px] h-auto rounded-md text-white">
       <img src={Image} alt={title} className="image" />
 
-      <h1 className="text-3xl font-semibold mt-5 ml-3">{title}</h1>
+      <h1 className="card-title text-3xl font-semibold mt-5 ml-3">{title}</h1>
 
-      <h2 className="relative ml-3 flex text-gray-500 h-3">
+      <h2 className="card-languages relative ml-3 flex text-gray-500 h-3">
         Languages used -
         <div className="relative ml-2 h-auto">
           {languageArray.map((language, index) => (
@@ -44,13 +43,15 @@ const ProjectCard = ({
           ))}
         </div>
       </h2>
-      <p className="relative top-5 ml-3 text-justify leading-1 text-[clamp(8px,3vw,50px)]">
+      <p className="card-languages relative top-5 ml-3 text-justify leading-1 text-[1.2rem]">
         {description}
       </p>
-      <a href={link} target="_blank" className="view-project">
-        <i className="fa fa-arrow-right-long"></i>
-        View project
-      </a>
+      <div className="hover-text-container absloute top-0 left-0  bg-slate-700 z-99">
+        <a href={link} target="_blank" className="view-project">
+          <i className="fa fa-arrow-right-long"></i>
+          View project
+        </a>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,19 @@
+#nameMobile {
+  overflow: hidden;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+#nameMobile::before {
+  @apply bg-background;
+  content: "";
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 3px solid white;
+  animation: typewriter 4s steps(16) forwards;
+}

@@ -31,3 +31,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "guriella"; /* Use the same name as in tailwind.config.js */
+  src: url("../fonts/Protest_Guerrilla/ProtestGuerrilla-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

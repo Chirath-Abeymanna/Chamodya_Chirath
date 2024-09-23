@@ -41,7 +41,7 @@ function Timeline() {
   return (
     <motion.div
       id="timeline"
-      className="relative overflow-x-hidden"
+      className=" relative overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0.5 }}
       transition={{ duration: 0.6 }}
@@ -60,6 +60,7 @@ function Timeline() {
             <VerticalTimelineElement
               className="container font-poppins"
               key={element.id}
+              iconClassName="timelineIcon"
               iconStyle={
                 isCertificateIcon ? CertificateIconStyles : schoolIconStyles
               }
@@ -75,13 +76,21 @@ function Timeline() {
                 />
               }
             >
-              <h3 className="text-2xl font-bold vertical-timeline-element-title">
+              <h3
+                id="title"
+                className="text-2xl font-bold vertical-timeline-element-title"
+              >
                 {element.title}
               </h3>
-              <h5 className="text-sm vertical-timeline-element-subtitle">
+              <h5
+                id="location"
+                className="text-sm vertical-timeline-element-subtitle"
+              >
                 {element.location}
               </h5>
-              <h6 className="text-[10px] text-gray-500">{element.date}</h6>
+              <h6 id="date" className="text-[10px] text-gray-500">
+                {element.date}
+              </h6>
               <p id="description">{element.description}</p>
               {showButton && (
                 <a

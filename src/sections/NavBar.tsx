@@ -5,12 +5,11 @@ import profileImage from "../assets/profile.jpg";
 import logo from "../assets/ico.svg";
 
 const NavBar: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>("education");
+  const [activeSection, setActiveSection] = useState<string>("hero");
 
   // Function to handle setting the active class
   const handleSetActive = (section: string) => {
     setActiveSection(section);
-    console.log(section);
   };
 
   return (
@@ -25,8 +24,8 @@ const NavBar: React.FC = () => {
         </div>
 
         {/* Name with Typewriter Animation */}
-        <h2 className="text-3xl ml-5 mb-3 font-poppins">
-          <span id="name" className="text-name font-bold">
+        <h2 className="text-4xl ml-5 mb-3 font-guriella ">
+          <span id="name" className="text-name tracking-wide font-bold">
             Chamodya Chirath
           </span>
         </h2>

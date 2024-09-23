@@ -35,6 +35,10 @@
   transition: width 0.3s ease;
 }
 
+.nav-item {
+  margin-bottom: 2rem;
+}
+
 /* Hover and Active Underline */
 .NavBar li a:hover::after,
 .NavBar li a.active::after {

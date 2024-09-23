@@ -8,10 +8,12 @@ export default {
     "./src/sections/projects.tsx",
     "./src/sections/Education.tsx",
     "./src/sections/Contact.tsx",
+    "./src/sections/HeroMobile.tsx",
     ".src/sections/components/ProjectCard.tsx",
     "./src/sections/components/TextAnimation.tsx",
     "./src/sections/components/TimelineElements.tsx",
     "./src/sections/components/ContactForm.tsx",
+    "./src/sections/components/NavBarMobile.tsx",
   ],
   theme: {
     extend: {
@@ -43,6 +45,7 @@ export default {
         spartan: "spartan",
         Lexend: "Lexend",
         poppins: "poppins",
+        guriella: "guriella",
       },
     },
   },

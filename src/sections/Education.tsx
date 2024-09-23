@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import TextAnimation from "./components/TextAnimation";
 import Timeline from "./components/TimelineElements";
+import "../css/education.css";
 
 function Education() {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,10 +54,22 @@ function Education() {
 
   return (
     <div className="w-full min-h-screen bg-background pb-[20vh]">
-      <div className="h-[100vh]">
-        <TextAnimation text="Edu cat ion &" changeSpeed={0.2} />
-        <div className="relative bottom-48">
-          <TextAnimation text=" Cer tif ica tions" changeSpeed={0.2} />
+      <div className="education h-[100vh] flex items-center justify-center">
+        <div className="">
+          <div>
+            <TextAnimation
+              text="Edu cat ion &"
+              paragraph=""
+              changeSpeed={0.2}
+            />
+          </div>
+          <div className="relative">
+            <TextAnimation
+              text=" Cert ifi cat ions"
+              paragraph=""
+              changeSpeed={0.2}
+            />
+          </div>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ const Counter: React.FC<CounterProps> = ({ endNumber, duration = 2000 }) => {
     return () => clearInterval(interval);
   }, [endNumber, duration]);
 
-  return <p className="text-clamp mb-5 font-Lexend text-center">{count}+</p>;
+  return <p className=" mb-5 font-Lexend text-center">{count}+</p>;
 };
 
 export default Counter;
