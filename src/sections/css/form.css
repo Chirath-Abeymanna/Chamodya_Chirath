@@ -1,5 +1,91 @@
+/* Main container */
+.main-container {
+  margin-left: 1.25rem; /* ml-5 */
+  width: 60vw;
+  height: max-content;
+  background-color: #04364a;
+  border-radius: 0.5rem; /* rounded-lg */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Left side container */
+.main-container > div {
+  width: 27vw;
+}
+
+/* Text styling */
+.main-container h1 {
+  margin-bottom: 0.5rem; /* mb-2 */
+  font-family: "Poppins", sans-serif; /* font-poppins */
+  font-weight: 500; /* font-medium */
+  color: white;
+  position: relative;
+  top: 25%;
+  left: 0.75rem; /* left-3 */
+}
+
+.main-container h1:nth-child(2) {
+  font-size: clamp(15px, 3vw, 50px); /* text-[clamp(15px,3vw,50px)] */
+  font-weight: 700; /* font-bold */
+  color: #64ccc5;
+}
+
+.main-container h1:nth-child(3) {
+  font-size: clamp(22px, 4vw, 65px); /* text-[clamp(22px,4vw,65px)] */
+  font-weight: 700; /* font-bold */
+}
+
+/* Form card */
+.form-card {
+  position: relative;
+  width: 40vw;
+  height: max-content;
+  margin: 3rem; /* m-12 */
+  margin-left: 0; /* ml-0 */
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 1.25rem; /* p-5 */
+}
+
+/* Form title */
+.form-card h1 {
+  font-size: clamp(10px, 1.5vw, 30px); /* text-[clamp(10px,1.5vw,30px)] */
+  font-weight: 600; /* font-semibold */
+  color: #3c829a;
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Buttons */
+
+.field-buttons {
+  margin-bottom: 2rem;
+}
+.field-buttons button {
+  background-color: #f1f5f9; /* Default button style */
+  color: #4b5563;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.field-buttons button:hover {
+  background-color: #3c829a;
+  color: white;
+}
+
+.field-buttons .selected {
+  background-color: #3c829a;
+  color: white;
+}
+
 .field-button {
   border: 1px solid;
+
   padding: 5px;
   margin: 7px 10px;
   border-radius: 2px;
@@ -16,15 +102,58 @@
   color: white;
 }
 
+/* Input Fields */
 .Name-container,
 .email-container {
   position: relative;
+  width: 10rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+input {
+  position: relative;
+  width: 20vw;
+  border-bottom: 3px solid #ccc; /* border-b-[3px] */
+  margin-top: 15rem;
+  padding: 0.5rem;
 }
 
 label {
+  color: #4b5563;
+}
+
+.email-label,
+.name-label {
+  position: absolute;
+  top: -1.5rem;
+  left: 0;
+}
+.description-area {
   position: relative;
+}
+
+textarea {
+  width: 20vw;
+  border: 1px solid #4b5563;
+}
+
+.meassage-label {
+  position: absolute;
   top: 0;
   left: 0;
+}
+
+/* Submit button */
+button[type="submit"] {
+  background-color: #3c829a;
+  color: white;
+  padding: 0.5rem 1rem; /* pl-7 pr-7 */
+  border-radius: 0.25rem; /* rounded-sm */
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #165e76;
 }
 input {
   transition: ease-in-out 0.3s;
@@ -41,4 +170,105 @@ input:focus + label,
 textarea:focus + label {
   color: #3c829a;
   font-weight: 600;
+}
+
+/* Media query for larger screens */
+@media (max-width: 1200px) and (orientation: portrait) {
+  .main-container {
+    display: block;
+    width: 95vw;
+    position: relative;
+    padding-bottom: 2rem !important;
+  }
+  .title-container {
+    position: relative;
+    padding: 2rem;
+    width: max-content !important;
+  }
+  .line-one {
+    font-size: 3rem;
+  }
+  .line-two {
+    font-size: 4rem !important;
+  }
+  .line-three {
+    font-size: 6rem !important;
+  }
+  .form-card {
+    margin: 2rem;
+    width: 90vw !important;
+  }
+  .form-card h1 {
+    font-size: 2.5rem;
+  }
+  .form-card .field-button {
+    font-size: 2rem;
+  }
+  .form-card .Name-container,
+  .form-card .email-container {
+    font-size: 2rem;
+    margin-top: 4rem;
+    padding-bottom: 1rem;
+    width: max-content;
+  }
+  .name-label,
+  .email-label {
+    top: -3rem;
+  }
+  .form-card input {
+    width: 80vw;
+  }
+  .form-card textarea {
+    width: 80vw;
+    height: 20vh;
+  }
+  .form-card .description-area {
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+  .form-card .meassage-label {
+    top: -1rem;
+  }
+  .form-card button[type="submit"] {
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .main-container {
+    margin: 1rem !important;
+    width: 93vw;
+  }
+  .title-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .line-one {
+    font-size: 1.5rem;
+  }
+  .line-two {
+    font-size: 2.5rem !important;
+  }
+  .line-three {
+    font-size: 4rem !important;
+  }
+  .field-button {
+    font-size: 1.5rem !important;
+  }
+
+  .form-card {
+    margin: 1rem;
+    width: 85vw !important;
+    padding: 1rem !important;
+  }
+  .form-card h1 {
+    font-size: 2rem;
+  }
+  textarea {
+    width: 75vw !important;
+  }
 }

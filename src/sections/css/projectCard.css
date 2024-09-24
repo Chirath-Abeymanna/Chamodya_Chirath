@@ -128,7 +128,7 @@
   position: absolute;
   top: 40%;
   left: 20%;
-  font-size: clamp(20px, 3rem, 80px);
+  font-size: 8rem;
   z-index: 1;
   opacity: 0;
   transition: 0.2s ease-in-out;
@@ -175,77 +175,95 @@
     grid-gap: 0px 100px;
     justify-items: center;
   }
-  .projects {
-    position: relative;
-    top: -6rem;
-  }
   .title {
-    align-items: center;
-    height: max-content;
+    height: max-content !important;
+    margin-bottom: 3rem;
   }
-  .title h1 {
-    font-size: 4rem;
+  .feature-title {
+    font-size: 5rem !important;
+    padding: 0 !important;
   }
-
   .all-projects {
     position: relative;
-    bottom: 1rem;
-    font-size: 1.5vh;
-    width: max-content;
-    padding: 1vh 2vh;
-  }
-  .all-projects::after {
-    content: none;
-  }
-  .all-projects:hover {
-    width: max-content;
-    background-color: #0f0f34;
+    top: 20%;
+    width: 30vw;
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
   }
   .card {
-    width: 100%;
-    height: max-content;
-  }
-  .card::after {
-    width: 100%;
-    height: max-content;
-  }
-  .card:hover::after {
-    height: 100%;
+    height: 60vh;
   }
   .card-title {
-    font-size: 3rem;
+    font-size: 4rem;
   }
   .card-languages {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .card-description {
-    font-size: 2.5rem;
-    margin-bottom: -2rem;
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
   }
   .dot {
     width: 15px;
     height: 15px;
-    top: 15px;
-    left: -20px;
+    top: 35%;
+    left: -1.2rem !important;
   }
-  .hover-text-container {
-    display: flex;
-    height: 100%;
-    position: absolute;
+  .card-description {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    padding-bottom: 3rem !important;
+  }
+  .card::after {
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
   }
   .view-project {
-    position: relative;
-    font-size: 5vh;
-    top: 0;
-    left: 0;
+    padding: 5rem;
+    font-size: 5rem !important;
   }
   .fa-arrow-right-long {
-    position: absolute;
-    font-size: 1.2vh;
+    top: 5rem;
     right: -3rem;
+    padding: 2rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 800px) and (orientation: portrait) {
+  .projects {
+    margin: 1rem;
+  }
+
+  .card {
+    height: 65vh !important;
+  }
+  .feature-title {
+    font-size: 3rem !important;
+  }
+  .all-projects {
+    font-size: 1rem;
+  }
+  .card-title {
+    font-size: 2.5rem !important;
+  }
+  .card-languages {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .card-description {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  .view-project {
+    padding: 3rem;
+    font-size: 8vw !important;
+  }
+  .fa-arrow-right-long {
+    top: 3.5rem !important;
+    right: 10vw !important;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .card::after {
+    width: 100%;
+    height: 65vh !important;
   }
 }

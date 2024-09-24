@@ -43,7 +43,7 @@ const ProjectCard = ({
           ))}
         </div>
       </h2>
-      <p className="card-languages relative top-5 ml-3 text-justify leading-1 text-[1.2rem]">
+      <p className="card-description relative top-5 ml-3 text-justify leading-1 text-[1.2rem]">
         {description}
       </p>
       <div className="hover-text-container absloute top-0 left-0  bg-slate-700 z-99">
