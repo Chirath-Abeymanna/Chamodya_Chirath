@@ -29,8 +29,8 @@ const ScrollParagraph = ({
       ref={ref}
       className={`${
         paragraph.trim()
-          ? "text-[7vw]  text-center pl-4 h-[100vh] overflow-auto"
-          : "text-[clamp(50px,10vw,200px)] text-center h-max overflow-auto"
+          ? "text-[6vw]  text-center pl-4 h-[100vh] overflow-auto"
+          : "text-[clamp(50px,8vw,200px)] text-center h-max overflow-auto"
       } text-white font-poppins relative`}
     >
       {words.map((word, index) => {

@@ -92,16 +92,6 @@
   transition: ease-in-out 0.3s;
 }
 
-.field-button:hover {
-  color: white;
-  background-color: #3c829a;
-}
-
-.field-button.selected {
-  background-color: #3c829a;
-  color: white;
-}
-
 /* Input Fields */
 .Name-container,
 .email-container {
@@ -133,7 +123,8 @@ label {
 }
 
 textarea {
-  width: 20vw;
+  width: 24vw;
+  height: 20vh;
   border: 1px solid #4b5563;
 }
 
@@ -241,6 +232,7 @@ textarea:focus + label {
   .main-container {
     margin: 1rem !important;
     width: 93vw;
+    height: max-content !important;
   }
   .title-container {
     margin: 1rem;
@@ -257,18 +249,37 @@ textarea:focus + label {
     font-size: 4rem !important;
   }
   .field-button {
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  label {
+    font-size: 1.2rem;
+    top: -1.5rem !important;
+  }
+  input {
+    font-size: 1.2rem !important;
+  }
+  .description-area label {
+    top: 0rem !important;
+  }
+  .description-area input {
+    font-size: 0.5rem !important;
   }
 
   .form-card {
     margin: 1rem;
     width: 85vw !important;
     padding: 1rem !important;
+    height: max-content !important;
+    margin-bottom: 10rem;
   }
   .form-card h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   textarea {
     width: 75vw !important;
+  }
+  button[type="submit"] {
+    font-size: 1rem !important;
+    padding: 0;
   }
 }

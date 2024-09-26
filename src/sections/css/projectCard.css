@@ -128,7 +128,7 @@
   position: absolute;
   top: 40%;
   left: 20%;
-  font-size: 8rem;
+  font-size: 3rem;
   z-index: 1;
   opacity: 0;
   transition: 0.2s ease-in-out;
@@ -172,6 +172,8 @@
 @media all and (max-width: 1200px) and (orientation: portrait) {
   .cards {
     grid-template-columns: 1fr;
+    width: max-content;
+    left: -6vw;
     grid-gap: 0px 100px;
     justify-items: center;
   }
@@ -229,12 +231,40 @@
 
 @media screen and (max-width: 800px) and (orientation: portrait) {
   .projects {
-    margin: 1rem;
+    margin: 0 1rem;
+  }
+  .projects-title {
+    height: 50vh;
+  }
+  .title {
+    display: block;
+    width: max-content;
+    margin-bottom: 5rem;
+  }
+  .title button {
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    width: max-content;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .title button::after {
+    content: none;
+  }
+  .title button:hover {
+    width: max-content;
+    background-color: #0f0f34;
+  }
+  .card {
+    height: max-content !important;
+    width: 90vw;
+    padding: 0 !important;
+  }
+  .image {
+    height: 25vh;
   }
 
-  .card {
-    height: 65vh !important;
-  }
   .feature-title {
     font-size: 3rem !important;
   }
@@ -242,23 +272,30 @@
     font-size: 1rem;
   }
   .card-title {
-    font-size: 2.5rem !important;
+    font-size: 1.5rem !important;
+  }
+  .dot {
+    height: 8px;
+    width: 8px;
   }
   .card-languages {
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
     margin-bottom: 1rem !important;
   }
   .card-description {
-    font-size: 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     margin-bottom: 0;
   }
   .view-project {
-    padding: 3rem;
+    position: absolute;
+    padding: 3rem 0rem;
+    padding-right: 3rem;
     font-size: 8vw !important;
   }
   .fa-arrow-right-long {
-    top: 3.5rem !important;
-    right: 10vw !important;
+    top: 3rem !important;
+    right: -1vw !important;
     padding: 1rem;
     font-size: 1rem;
   }
