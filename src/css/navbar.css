@@ -9,6 +9,11 @@
   }
 }
 
+.profile {
+  object-fit: cover;
+  object-position: 0px -8px;
+}
+
 .NavBar .profile {
   aspect-ratio: 1;
   width: 12vw;
