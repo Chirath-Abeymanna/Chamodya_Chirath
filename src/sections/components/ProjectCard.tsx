@@ -24,7 +24,7 @@ const ProjectCard = ({
   const languageArray = languages.split(","); // Convert languages string to an array
 
   return (
-    <div className="card relative pb-10  bg-card w-3xl max-w-[500px] h-auto rounded-md text-white">
+    <div className="card relative pb-10 m-10  bg-card w-3xl max-w-[500px] h-auto rounded-md text-white">
       <img src={Image} alt={title} className="image" />
 
       <h1 className="card-title text-3xl font-semibold mt-5 ml-3">{title}</h1>
