@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex font-spartan">
+    <div className="flex font-spartan overflow-x-hidden">
       {isMobile ? "" : <Cursor />}
       <section className={`${isMobile ? "w-10% fixed z-30" : "w-[30%]"} mr-2`}>
         {isMobile ? <NavBarMobile /> : <NavBar />}
