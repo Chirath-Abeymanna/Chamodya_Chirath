@@ -16,7 +16,7 @@ function NavBarMobile() {
   };
 
   return (
-    <div className="relative z-10 container w-[100vw] bg-slate-400 ">
+    <div className="relative z-10 container w-[100vw] h-[100vh] bg-slate-400 ">
       <div className="bars ">
         <button type="button" onClick={toggleNav}>
           <i className="fa fa-bars"></i>
@@ -24,9 +24,12 @@ function NavBarMobile() {
       </div>
 
       <div className={`nav-bar ${isNavVisible ? "open" : ""}`}>
-        <button onClick={toggleNav} type="button" className="close-Button">
-          <i className="fa fa-close"></i>
-        </button>
+        <div className="close-button-container">
+          <button onClick={toggleNav} type="button" className="close-Button">
+            <i className="fa fa-close"></i>
+          </button>
+        </div>
+
         <div className=" flex items-center justify-center">
           <nav>
             {/* Navigation Links */}

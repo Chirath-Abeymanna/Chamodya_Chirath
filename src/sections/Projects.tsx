@@ -77,7 +77,7 @@ function Projects() {
   }, [isVisible, controls]);
 
   return (
-    <div className="relative w-full h-full bg-background m-5 overflow-hidden ">
+    <div className="relative w-full h-full bg-background overflow-hidden ">
       <div className="projects-title h-[100vh] flex items-center justify-center">
         <TextAnimation text="P r o j e c t s" paragraph="" changeSpeed={0.1} />
       </div>

@@ -1,11 +1,13 @@
 .nav-bar {
   z-index: 10;
   opacity: 0;
+  width: 100vw;
   position: absolute;
   top: -110vh;
   left: 0;
-  -webkit-backdrop-filter: blur(50px);
-  backdrop-filter: blur(50px);
+  background-color: #0b0b0c;
+  /* -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px); */
   color: white;
   transition: ease-in-out 0.4s;
 }
@@ -25,7 +27,7 @@ ul {
 
 ul li {
   top: -1px;
-  margin: 7rem 0;
+  margin: 15vh 0;
 }
 
 ul li a:hover,
@@ -33,12 +35,22 @@ ul li a:focus {
   color: #25c0e7;
 }
 
+.close-button-container {
+  position: relative;
+  padding: 2rem;
+}
+
 .close-Button {
   font-size: 8vw;
-  width: 100vw;
-  padding-top: 1rem;
-  padding-right: 5vw;
-  text-align: right;
+  width: max-content;
+  position: absolute;
+  padding: 0.1rem 0.7rem;
+  padding-bottom: 0rem;
+  border-radius: 15%;
+  outline: solid 0.1rem white;
+  top: 1rem;
+  right: 1rem;
+  text-align: center;
 }
 
 .bars {
