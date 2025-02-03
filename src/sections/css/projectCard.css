@@ -8,9 +8,15 @@
   display: grid;
   left: 0%;
   right: 0%;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%; /* Ensure it takes full container width */
+  max-width: 1200px; /* Prevent excessive stretching */
+  margin: auto; /* Center it */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(350px, 1fr)
+  ); /* Slightly reduced min width */
   justify-items: center;
-  grid-gap: 0px 50px;
+  gap: 20px; /* Ensure a small gap instead of 0px 50px */
 }
 
 .title {
