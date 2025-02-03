@@ -55,3 +55,5 @@ body {
   opacity: 0;
   animation-delay: 1s;
 }
+
+/* Ensure no pointer-events: none; or z-index issues */

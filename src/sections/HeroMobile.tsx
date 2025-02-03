@@ -14,6 +14,9 @@ function HeroMobile() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check for JavaScript errors
+    console.log("HeroMobile component mounted");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -41,6 +44,7 @@ function HeroMobile() {
   }, []);
   return (
     <div className="relative h-max top-[3rem] bg-background  pb-20 overflow-x-hidden">
+      {/* Ensure no overlay elements are blocking interactions */}
       <div className="relative flex justify-center mt-[20%] pb-[15vh] Profile  w-[100vw] h-max  text-white font-poppins">
         <div>
           <div className="relative justify-center h-max ">
@@ -171,7 +175,7 @@ function HeroMobile() {
                   Looking for a new Talent ?
                 </h1>
               </div>
-              <div className="relative flex h-max justify-center right-3 ">
+              <div className="relative flex h-max justify-center right-3">
                 <h2 className="text-[6vw] pt-3 transition-colors hover:text-[#8078d3]">
                   <a href="mailto:chamodyachiarth@gmail.com">
                     {" "}

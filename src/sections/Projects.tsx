@@ -77,7 +77,7 @@ function Projects() {
   }, [isVisible, controls]);
 
   return (
-    <div className="relative w-full h-full bg-background overflow-hidden ">
+    <div className="relative w-full h-full bg-background ">
       <div className="projects-title h-[100vh] flex items-center justify-center">
         <TextAnimation text="P r o j e c t s" paragraph="" changeSpeed={0.1} />
       </div>
@@ -86,7 +86,7 @@ function Projects() {
       <div ref={projectsecRef} className="projects relative p-10">
         <div className="title">
           <motion.div initial={{ y: 50, opacity: 0 }} animate={controls}>
-            <h1 className="feature-title relative text-white text-[clamp(30px,3vw,60px)] pb-10">
+            <h1 className="feature-title relative text-white text-[3vw] pb-10">
               Featured Projects
             </h1>
           </motion.div>

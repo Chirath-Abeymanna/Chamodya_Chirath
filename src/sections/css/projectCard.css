@@ -140,6 +140,9 @@
   padding-bottom: 1rem;
   overflow: hidden;
   height: 90%;
+  background-color: #111116;
+  color: white;
+  border-radius: 10px;
 }
 .card::after {
   border-radius: 0.375rem;

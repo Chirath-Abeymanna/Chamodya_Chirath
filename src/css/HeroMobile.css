@@ -5,6 +5,7 @@
   margin: 0;
 }
 
+/* Ensure no pointer-events: none; or z-index issues */
 #nameMobile::before {
   @apply bg-background;
   content: "";
