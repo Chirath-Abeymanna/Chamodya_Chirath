@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import "../css/navbar.css";
 import profileImage from "../assets/profile.jpg";
-import logo from "../assets/ico.svg";
+import logo from "../assets/ico2.svg";
 
 const NavBar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("hero");
