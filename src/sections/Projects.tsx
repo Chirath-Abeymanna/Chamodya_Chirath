@@ -83,7 +83,7 @@ function Projects() {
       </div>
 
       {/* The section being observed for animation */}
-      <div ref={projectsecRef} className="projects relative p-10">
+      <div ref={projectsecRef} className="projects">
         <div className="title">
           <motion.div initial={{ y: 50, opacity: 0 }} animate={controls}>
             <h1 className="feature-title relative text-white text-[3vw] pb-10">
