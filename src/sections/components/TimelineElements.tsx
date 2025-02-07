@@ -10,11 +10,13 @@ import "react-vertical-timeline-component/style.min.css";
 import "../css/timeline.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Import motion from Framer Motion
+import Modal from "../components/SubWindow";
 
 function Timeline() {
   let schoolIconStyles = { background: "#1c6079", color: "#ffffff" };
   let CertificateIconStyles = { background: "#0A4BBB", color: "#ffffff" };
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,6 +39,10 @@ function Timeline() {
       }
     };
   }, []);
+
+  const openModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
 
   return (
     <motion.div
@@ -93,19 +99,26 @@ function Timeline() {
               </h6>
               <p id="description">{element.description}</p>
               {showButton && (
-                <a
+                <button
                   className={`button ${
                     isCertificateIcon ? "certificateButton" : "schoolButton"
                   }`}
-                  href="/"
+                  onClick={() => openModal(element.img)}
                 >
                   {element.buttonText}
-                </a>
+                </button>
               )}
             </VerticalTimelineElement>
           );
         })}
       </VerticalTimeline>
+      {/* Modal Component */}
+      {selectedImage && (
+        <Modal
+          imageSrc={selectedImage}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </motion.div>
   );
 }

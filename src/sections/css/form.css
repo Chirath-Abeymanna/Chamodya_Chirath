@@ -169,12 +169,11 @@ textarea:focus + label {
 }
 
 /* Media query for larger screens */
-/* @media (max-width: 1200px) and (orientation: portrait) {
+@media (max-width: 1200px) and (orientation: portrait) {
   .main-container {
     display: block;
-    width: 95vw;
+    width: auto;
     position: relative;
-    padding-bottom: 2rem !important;
   }
   .title-container {
     position: relative;
@@ -182,7 +181,7 @@ textarea:focus + label {
     width: max-content !important;
   }
   .line-one {
-    font-size: 3rem;
+    font-size: 1.5rem !important;
   }
   .line-two {
     font-size: 4rem !important;
@@ -230,14 +229,16 @@ textarea:focus + label {
     margin-top: 2rem;
     padding: 1rem 2rem;
   }
-} */
+}
 
 /* Media query for smaller screens */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .main-container {
-    margin: 1rem !important;
-    width: 93vw;
-    height: max-content !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 95vw !important;
+    height: auto !important;
+    padding-bottom: 1px !important;
   }
   .title-container {
     margin: 1rem;
@@ -287,4 +288,4 @@ textarea:focus + label {
     font-size: 1rem !important;
     padding: 0;
   }
-} */
+}

@@ -16,8 +16,8 @@ function NavBarMobile() {
   };
 
   return (
-    <div className="relative z-10 container w-[100vw] h-[100vh] bg-slate-400 ">
-      <div className="bars ">
+    <div className="nav-bar-container">
+      <div className="bars">
         <button type="button" onClick={toggleNav}>
           <i className="fa fa-bars"></i>
         </button>

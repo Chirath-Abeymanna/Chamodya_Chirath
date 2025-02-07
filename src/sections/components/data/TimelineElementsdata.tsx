@@ -1,3 +1,5 @@
+import certificateImage from "../assets/CodeRally_ Certification.png";
+
 let timelineElements = [
   {
     id: 1,
@@ -5,9 +7,10 @@ let timelineElements = [
     location: "R/ Sivali Central College, Sri Lanka",
     description:
       "I studied at R/Sivali Central College from grade 1 to grade 13, where I gained a solid foundation in academics and developed a passion for learning. I completed my G.C.E Ordinary Level and G.C.E Advanced Level in this School",
-    buttonText: "View Result sheets",
+    buttonText: "",
     date: "january 2009 - February 2023",
     icon: "school",
+    img: "",
   },
   {
     id: 2,
@@ -19,6 +22,7 @@ let timelineElements = [
     buttonText: "",
     date: "January 2024 - present",
     icon: "school",
+    img: "",
   },
   {
     id: 3,
@@ -29,6 +33,7 @@ let timelineElements = [
     buttonText: "View certification",
     date: "",
     icon: "certificate",
+    img: certificateImage,
   },
 ];
 

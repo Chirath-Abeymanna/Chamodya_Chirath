@@ -1,0 +1,61 @@
+/* Full-screen modal that ignores parent containers */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 998;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal Box */
+.close-box {
+  position: absolute; /* Use absolute positioning to place it in top-right */
+  top: 3%; /* Space from the top */
+  right: 2%; /* Space from the right */
+  z-index: 999; /* Ensure close button stays on top of modal */
+}
+
+.modal-container {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 60vw;
+  max-height: 720px;
+  overflow-y: auto;
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.close-button {
+  width: 30px;
+  height: 30px;
+  top: 3%;
+  right: 8%;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image */
+.modal-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  border-radius: 5px;
+  margin-top: 10px;
+}
