@@ -57,12 +57,12 @@ function ContactForm() {
       )
       .then(
         (response) => {
-          console.log(selectedFields);
-          console.log(typeof selectedFields);
+          console.log(response.text);
           setFormData({ name: "", email: "", message: "" });
           setSelectedButtons([]);
         },
         (error) => {
+          console.log(error.text);
           alert("Failed to send email. Please try again later.");
         }
       );
