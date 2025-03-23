@@ -47,9 +47,6 @@ const NavBar: React.FC = () => {
               className={activeSection === "hero" ? "active" : ""}
               to="hero"
               spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
               onSetActive={() => handleSetActive("hero")}
             >
               <i className="fa fa-mug-hot"></i> Home
@@ -61,9 +58,6 @@ const NavBar: React.FC = () => {
               className={activeSection === "education" ? "active" : ""}
               to="education"
               spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
               onSetActive={() => handleSetActive("education")}
             >
               <i className="fa fa-book"></i> Education
@@ -75,9 +69,6 @@ const NavBar: React.FC = () => {
               className={activeSection === "projects" ? "active" : ""}
               to="projects"
               spy={true}
-              smooth={true}
-              offset={-60}
-              duration={500}
               onSetActive={() => handleSetActive("projects")}
             >
               <i className="fa fa-bars-progress"></i> Projects
@@ -89,9 +80,6 @@ const NavBar: React.FC = () => {
               className={activeSection === "contact" ? "active" : ""}
               to="contact"
               spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
               onSetActive={() => handleSetActive("contact")}
             >
               <i className="fa fa-phone"></i> Get in touch

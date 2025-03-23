@@ -5,6 +5,7 @@ body {
   height: 100%;
   cursor: none;
   background-color: white;
+  scroll-behavior: smooth;
 }
 
 /* Custom scroll bar */

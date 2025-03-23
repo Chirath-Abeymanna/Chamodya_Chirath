@@ -2,13 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Counter from "./components/Counter";
+import Modal from "./components/subWindow2";
 
 const Hero = () => {
-  const NoProject = 3;
+  const NoProject = 6;
   const NoAchivements = 5;
-  const NoSkills = 10;
+  const NoSkills = 12;
 
   const [animate, setAnimate] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setAnimate(true);
@@ -16,6 +18,9 @@ const Hero = () => {
 
   return (
     <div className="relative w-full bg-background h-full flex flex-col justify-center overflow-hidden z0">
+      {showModal && (
+        <Modal imageSrc={null} onClose={() => setShowModal(false)} />
+      )}
       <head>
         <link rel="preload" href="CV.pdf" as="document" />
       </head>
@@ -117,9 +122,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Project Cards */}
+      {/* Project Card */}
       <div className="relative mt-10 mb-10 left-0 w-full h-max flex justify-around">
-        <div
+        <a
+          href="#projects"
           className={`project-card w-[12vw] h-max p-[2vw] pb-2 rounded-md bg-[#101014] text-white overflow-hidden`}
         >
           <div
@@ -132,7 +138,7 @@ const Hero = () => {
               projects completed
             </p>
           </div>
-        </div>
+        </a>
 
         <div
           className={`Achievement-card w-max h-max p-[2vw]  rounded-md bg-[#101014] text-white overflow-hidden`}
@@ -157,7 +163,8 @@ const Hero = () => {
         </div>
 
         <div
-          className={`Skills-card w-max h-max p-8 pb-2 rounded-md bg-[#101014] text-white overflow-hidden`}
+          className={`Skills-card w-max h-max p-8 pb-2 rounded-md bg-[#101014] text-white overflow-hidden cursor-pointer`}
+          onClick={() => setShowModal(true)}
         >
           <div
             className={`relative ${animate ? "fade-in-up fade-delay-2" : ""}`}

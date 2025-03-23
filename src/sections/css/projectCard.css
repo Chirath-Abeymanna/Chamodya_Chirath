@@ -12,17 +12,49 @@
 .cards {
   position: relative;
   display: grid;
-  left: 0%;
-  right: 0%;
-  width: 100%; /* Ensure it takes full container width */
-  max-width: 1200px; /* Prevent excessive stretching */
-  margin: auto; /* Center it */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(350px, 1fr)
-  ); /* Slightly reduced min width */
-  justify-items: center;
-  gap: 20px; /* Ensure a small gap instead of 0px 50px */
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  height: 700px;
+  width: 100%;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.flip-card-front {
+  background-color: transparent;
+}
+.flip-card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111116;
+  transform: rotateY(180deg);
 }
 
 .title {
@@ -80,18 +112,8 @@
   object-position: center 3px;
 }
 
-.language {
-  position: relative;
-  display: inline-block;
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
 .dot {
-  position: absolute !important;
-  top: 8px;
-  left: -15px;
-  margin-right: 5px;
+  position: relative !important;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -99,7 +121,7 @@
 }
 
 .dot-python {
-  background-color: #306998 !important;
+  background-color: #3572a5;
 }
 
 .dot-javascript {
@@ -107,20 +129,50 @@
 }
 
 .dot-html {
-  background-color: #e44d26;
+  background-color: #e34f26;
 }
 
 .dot-css {
-  background-color: #264de4;
+  background-color: #1572b6;
 }
 
 .dot-java {
-  background-color: #e42626;
+  background-color: #b07219;
 }
 
 /*  default color for unknown languages */
 .dot-default {
   background-color: #aaa;
+}
+.dot-nextjs {
+  background-color: #000f37; /* Black for Next.js logo theme */
+}
+
+.dot-springboot {
+  background-color: #6db33f; /* Green for Spring Boot */
+}
+
+.dot-angular {
+  background-color: #dd0031; /* Red for Angular */
+}
+
+.dot-tailwind {
+  background-color: #38bdf8; /* Light blue for Tailwind CSS */
+}
+.dot-mysql {
+  background-color: #00758f; /* MySQL blue */
+}
+
+.dot-flask {
+  background-color: #000000; /* Flask's color (black) */
+}
+
+.dot-mongodb {
+  background-color: #47a248; /* MongoDB's color (green) */
+}
+
+.dot-typescript {
+  background-color: #3178c6; /* TypeScript's color (blue) */
 }
 
 .fa-arrow-right-long {
@@ -155,19 +207,9 @@
   background-color: #111116;
   color: white;
   border-radius: 10px;
-}
-.card::after {
-  border-radius: 0.375rem;
-  content: "";
-  position: absolute;
-  top: 55vh;
-  left: 0;
-  background-color: #1182b6;
-  width: 60vw;
-  height: 3vh;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  z-index: 0;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .card:hover .view-project {
@@ -184,139 +226,121 @@
   height: 60vh;
 }
 
-@media all and (max-width: 1200px) and (orientation: portrait) {
+.card-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-left: 1.25rem;
+  color: white;
+}
+
+.card-stack {
+  display: flex;
+  color: #83838a;
+  margin: 1.25rem;
+  flex-wrap: nowrap;
+}
+
+.card-stack h3 {
+  width: max-content;
+  height: max-content;
+}
+
+.language-container {
+  margin-left: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-description {
+  margin: 1.25rem;
+  border-radius: 0.375rem;
+  height: 100%;
+}
+
+.card-description p {
+  color: white;
+  text-align: justify;
+}
+
+.project-link {
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  font-size: 4rem;
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 768px) {
   .cards {
+    display: grid;
     grid-template-columns: 1fr;
-    width: max-content;
-    left: -6vw;
-    grid-gap: 0px 100px;
-    justify-items: center;
-  }
-  .title {
-    height: max-content !important;
-    margin-bottom: 3rem;
-  }
-  .feature-title {
-    font-size: 5rem !important;
-    padding: 0 !important;
-  }
-  .all-projects {
-    position: relative;
-    top: 20%;
-    width: 30vw;
-    font-size: 1.5rem;
-    padding: 1rem 0rem;
-  }
-  .card {
-    height: 60vh;
-    left: 5%;
-  }
-  .card-title {
-    font-size: 4rem;
-  }
-  .card-languages {
-    font-size: 2rem !important;
-    margin-bottom: 2rem !important;
-  }
-  .dot {
-    width: 15px;
-    height: 15px;
-    top: 35%;
-    left: -1.2rem !important;
-  }
-  .card-description {
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    padding-bottom: 3rem !important;
-  }
-  .card::after {
     width: 100%;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .flip-card {
+    height: 600px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .card {
+    max-width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 1rem;
   }
-  .view-project {
-    padding: 5rem;
-    font-size: 5rem !important;
+
+  .card-stack {
+    flex-direction: column;
   }
-  .fa-arrow-right-long {
-    top: 5rem;
-    right: -3rem;
-    padding: 2rem;
+
+  .language-container {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .image {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+
+  .project-link {
     font-size: 2rem;
   }
 }
 
-@media screen and (max-width: 800px) and (orientation: portrait) {
-  .projects {
-    margin: 0 1rem;
-  }
-  .projects-title {
-    height: 50vh;
-  }
-  .title {
-    display: block;
-    width: max-content;
-    margin-bottom: 5rem;
-  }
-  .title button {
-    position: absolute;
-    right: 0;
-    top: 5rem;
-    width: max-content;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-  .title button::after {
-    content: none;
-  }
-  .title button:hover {
-    width: max-content;
-    background-color: #0f0f34;
-  }
-  .card {
-    height: max-content !important;
-    width: 90vw;
-    padding: 0 !important;
-  }
-  .image {
-    height: 25vh;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem;
+    gap: 2rem;
   }
 
-  .feature-title {
-    font-size: 3rem !important;
-  }
-  .all-projects {
-    font-size: 1rem;
-  }
-  .card-title {
-    font-size: 1.5rem !important;
-  }
-  .dot {
-    height: 8px;
-    width: 8px;
-  }
-  .card-languages {
-    font-size: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .card-description {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin-bottom: 0;
-  }
-  .view-project {
-    position: absolute;
-    padding: 3rem 0rem;
-    padding-right: 3rem;
-    font-size: 8vw !important;
-  }
-  .fa-arrow-right-long {
-    top: 3rem !important;
-    right: -1vw !important;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  .card::after {
+  .flip-card {
+    height: 600px;
     width: 100%;
-    height: 65vh !important;
+    margin: 0;
+  }
+
+  .card {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
   }
 }

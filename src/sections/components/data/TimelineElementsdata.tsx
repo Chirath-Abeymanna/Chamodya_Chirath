@@ -1,4 +1,5 @@
 import certificateImage from "../assets/CodeRally_ Certification.png";
+import IEEECertificate from "../assets/Xtreme_Certificate.png";
 
 let timelineElements = [
   {
@@ -34,6 +35,17 @@ let timelineElements = [
     date: "",
     icon: "certificate",
     img: certificateImage,
+  },
+  {
+    id: 4,
+    title: "IEEE XTREME 18.0",
+    location: "Bambalapitiya, Sri Lanka",
+    description:
+      "This was a 24 hour competetive programming hackathon organized by IEEE. I consider this as a milestone in my programming career.",
+    buttonText: "View certification",
+    date: "",
+    icon: "certificate",
+    img: IEEECertificate,
   },
 ];
 

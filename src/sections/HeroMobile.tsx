@@ -4,13 +4,15 @@ import "../css/HeroMobile.css";
 import "../css/App.css";
 import TextAnimation from "./components/TextAnimation";
 import Counter from "./components/Counter";
+import Modal from "./components/subWindow2";
 
 function HeroMobile() {
-  const NoProject = 3;
+  const NoProject = 6;
   const NoAchivements = 5;
-  const NoSkills = 10;
+  const NoSkills = 12;
 
   const [animate, setAnimate] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,6 +46,9 @@ function HeroMobile() {
   }, []);
   return (
     <div className="relative h-max top-[3rem] bg-background  pb-20 overflow-x-hidden">
+      {showModal && (
+        <Modal imageSrc={null} onClose={() => setShowModal(false)} />
+      )}
       {/* Ensure no overlay elements are blocking interactions */}
       <div className="relative flex justify-center mt-[20%] pb-[15vh] Profile  w-[100vw] h-max  text-white font-poppins">
         <div>
@@ -94,7 +99,8 @@ function HeroMobile() {
           <div
             className={`project-card h-max p-[8vw] rounded-md bg-[#101014] text-white overflow-hidden mb-[3vh]`}
           >
-            <div
+            <a
+              href="#projects"
               className={`relative flex justify-around h-max ${
                 animate ? "fade-in-up fade-delay-2" : ""
               }`}
@@ -105,7 +111,7 @@ function HeroMobile() {
               <p className="relative top-5 text-[5vw] space-y-8 leading-5 text-[#CFCFCF] text-center">
                 projects completed
               </p>
-            </div>
+            </a>
           </div>
 
           <div
@@ -131,7 +137,8 @@ function HeroMobile() {
           </div>
 
           <div
-            className={`Skills-card h-max p-[8vw] rounded-md bg-[#101014] text-white overflow-hidden mb-[3vh]`}
+            className={`Skills-card h-max p-[8vw] rounded-md bg-[#101014] text-white overflow-hidden mb-[3vh] cursor-pointer`}
+            onClick={() => setShowModal(true)}
           >
             <div
               className={`relative flex justify-around h-max ${
