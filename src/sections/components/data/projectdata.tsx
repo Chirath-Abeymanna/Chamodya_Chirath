@@ -54,7 +54,7 @@ let projectData = [
     title: "Car price predicting system",
     languages: "python,pandas,numpy,scikit-learn",
     description: `This project helps you to predict the price of a car based on the features of the car. This was created using machine learning algorithms and python libraries`,
-    link: "https://github.com/Chirath-Abeymanna/Car-Price-Predicting-system",
+    link: "https://car-price-predicting-system-production.up.railway.app",
     img: Image7,
   },
 ];
