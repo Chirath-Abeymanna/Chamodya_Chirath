@@ -52,8 +52,10 @@
 .flip-card-back {
   display: flex;
   align-items: center;
+  border-radius: 5px;
+  height: 650px;
   justify-content: center;
-  background-color: #111116;
+  background-color: #040f17;
   transform: rotateY(180deg);
 }
 
