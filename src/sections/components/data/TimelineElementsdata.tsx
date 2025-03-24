@@ -19,7 +19,7 @@ let timelineElements = [
     location:
       "University of Westminster, England (conducted through Informatics Institue of Technology, Sri Lanka)",
     description:
-      "I am currently following Bsc. Computer Science programme while specializing in Machine Learning and Cyber Security",
+      "I am currently following Bsc. Computer Science programme while specializing in Machine Learning ",
     buttonText: "",
     date: "January 2024 - present",
     icon: "school",

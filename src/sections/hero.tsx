@@ -76,10 +76,9 @@ const Hero = () => {
             </h2>
             <p className="relative text-[clamp(15px,1vw,70px)] space-y-8 mb-2 mt-5 leading-5 text-[#CFCFCF] overflow-hidden">
               I am a Computer Science undergraduate with a passion for creating
-              innovative solutions. Currently, I am specializing in Robotics
-              Engineering and Machine Learning, while also nurturing a strong
-              interest in web development, which I am pursuing independently.{" "}
-              <br />
+              innovative solutions. Currently, I am specializing in Machine
+              Learning, while also nurturing a strong interest in full stack web
+              development, which I am pursuing independently. <br />
               <br /> This portfolio showcases my skills, interests, and
               dedication to growth in these fields
             </p>

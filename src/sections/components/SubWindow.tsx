@@ -15,15 +15,26 @@ const Modal: React.FC<ModalProps> = ({ imageSrc, onClose }) => {
         onClose();
       }
     };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      // Prevent page scrolling when modal is open
+      e.preventDefault();
+    };
+
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
   }, [onClose]);
 
   if (!imageSrc) return null;
 
   return ReactDOM.createPortal(
-    <div className="modal-overlay">
-      <div>
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="UI" onClick={(e) => e.stopPropagation()}>
         <div className="close-box">
           <button className="close-button" onClick={onClose}>
             <i className="fa fa-xmark"></i>

@@ -1,43 +1,50 @@
 /* Full-screen modal that ignores parent containers */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
   justify-content: center;
-  z-index: 998;
+  align-items: center;
+  z-index: 1000;
   transition: opacity 0.3s ease-in-out;
 }
 
 /* Modal Box */
 .close-box {
   position: absolute; /* Use absolute positioning to place it in top-right */
-  top: 3%; /* Space from the top */
-  right: 2%; /* Space from the right */
-  z-index: 999; /* Ensure close button stays on top of modal */
+  top: 10px; /* Space from the top */
+  right: 10px; /* Space from the right */
+  z-index: 1001; /* Ensure close button stays on top of modal */
 }
 
 .modal-container {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 60vw;
-  max-height: 720px;
+  max-width: 90vw;
+  max-height: 90vh;
   overflow-y: auto;
   text-align: center;
   position: relative;
+}
+.UI {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
 }
 
 .model-2 {
   width: 80vw;
   height: 80vh;
   display: flex;
-
   justify-content: center;
   gap: 15vw;
   background-color: #111116;
@@ -103,7 +110,7 @@
   height: 30px;
   top: 3%;
   right: 8%;
-  background: red;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   border-radius: 50%;
@@ -112,6 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 8px 12px;
 }
 
 /* Image */
@@ -119,9 +127,11 @@
   position: relative;
   width: 100%;
   height: auto;
-  object-fit: cover; /* Ensure the image covers the entire area without distortion */
+  object-fit: contain; /* Ensure the image covers the entire area without distortion */
   border-radius: 5px;
-  margin-top: 10px;
+
+  max-width: 100%;
+  max-height: 80vh;
 }
 
 /* Mobile Responsive Styles */
@@ -142,56 +152,63 @@
     height: max-content;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
 
-  .skills {
+    .skills {
+      width: 100%;
+      height: auto;
+      padding: 0.5rem;
+    }
+
+    .skill-list {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .skill-list .title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-list li {
+      font-size: 0.9rem;
+      padding: 0.3rem 0;
+    }
+
+    .close-button {
+      width: 25px;
+      height: 25px;
+      font-size: 14px;
+      top: 2%;
+      right: 5%;
+    }
+  }
+  .modal-image {
     width: 100%;
+    position: relative;
+    top: 10rem;
     height: auto;
-    padding: 0.5rem;
+    object-fit: contain;
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 80vh;
   }
+  @media screen and (max-width: 480px) {
+    .model-2 {
+      height: 80vh;
+      padding: 1rem;
+      padding-top: 2rem;
+    }
 
-  .skill-list {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
+    .skills {
+      padding: 0.25rem;
+    }
 
-  .skill-list .title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
+    .skill-list .title {
+      font-size: 1rem;
+    }
 
-  .skill-list li {
-    font-size: 0.9rem;
-    padding: 0.3rem 0;
-  }
-
-  .close-button {
-    width: 25px;
-    height: 25px;
-    font-size: 14px;
-    top: 2%;
-    right: 5%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .model-2 {
-    height: 80vh;
-    padding: 1rem;
-    padding-top: 2rem;
-  }
-
-  .skills {
-    padding: 0.25rem;
-  }
-
-  .skill-list .title {
-    font-size: 1rem;
-  }
-
-  .skill-list li {
-    font-size: 0.8rem;
+    .skill-list li {
+      font-size: 0.8rem;
+    }
   }
 }

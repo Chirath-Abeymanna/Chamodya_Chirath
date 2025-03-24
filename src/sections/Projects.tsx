@@ -55,7 +55,7 @@ function Projects() {
 
       <div ref={projectsecRef} className="projects">
         <div className="title mb-12">
-          <h1 className="feature-title relative text-white text-[3vw] pb-10">
+          <h1 className="feature-title relative text-white text-[3rem] pb-0 lg:pb-10">
             Featured Projects
           </h1>
         </div>
