@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/* ============================================
+   CSS DESIGN TOKENS — shadcn/ui compatible
+   ============================================ */
+:root {
+  /* Light — ice-blue tinted whites */
+  --background: 214 40% 97%;
+  --foreground: 220 30% 8%;
+  --card: 210 35% 100%;
+  --card-foreground: 220 30% 8%;
+  --popover: 210 35% 100%;
+  --popover-foreground: 220 30% 8%;
+  --primary: 220 35% 12%;
+  --primary-foreground: 210 40% 97%;
+  --secondary: 213 30% 92%;
+  --secondary-foreground: 220 35% 12%;
+  --muted: 213 25% 92%;
+  --muted-foreground: 215 18% 46%;
+  --accent: 213 30% 91%;
+  --accent-foreground: 220 35% 12%;
+  --destructive: 0 72% 51%;
+  --border: 213 25% 88%;
+  --input: 213 25% 88%;
+  --ring: 213 60% 55%;
+  --radius: 0.625rem;
+  --blue-glow: 213 80% 60%;
+}
+
+.dark {
+  /* Dark — deep navy, not pure black */
+  --background: 222 28% 5%;
+  --foreground: 210 30% 95%;
+  --card: 222 24% 8%;
+  --card-foreground: 210 30% 95%;
+  --popover: 222 24% 8%;
+  --popover-foreground: 210 30% 95%;
+  --primary: 210 30% 95%;
+  --primary-foreground: 222 28% 5%;
+  --secondary: 220 20% 13%;
+  --secondary-foreground: 210 30% 95%;
+  --muted: 220 20% 13%;
+  --muted-foreground: 215 15% 58%;
+  --accent: 220 22% 15%;
+  --accent-foreground: 210 30% 95%;
+  --destructive: 0 62% 55%;
+  --border: 220 20% 18%;
+  --input: 220 20% 18%;
+  --ring: 213 70% 60%;
+  --blue-glow: 213 80% 60%;
+}
+
+/* ============================================
+   TAILWIND THEME MAPPING
+   ============================================ */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-geist-sans, system-ui, sans-serif);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Selection */
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 4rem;
+}
+
+/* ============================================
+   Custom Utilities
+   ============================================ */
+@layer utilities {
+  .animate-blob {
+    animation: blob 8s ease-in-out infinite;
+  }
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 2rem)); } /* -2rem accounts for half of 4rem gap (gap-16) */
+}
+
+@keyframes blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+}
