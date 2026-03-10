@@ -10,7 +10,11 @@ const slideIn: Variants = {
   visible: (i: number) => ({
     opacity: 1,
     x: 0,
-    transition: { duration: 0.65, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+    transition: {
+      duration: 0.65,
+      delay: i * 0.1,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+    },
   }),
 };
 
@@ -26,11 +30,25 @@ const experiences = [
       "Architected microservice backends ",
       "Reduced project delivery time by 30% via Agile sprint planning",
     ],
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Docker"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Jira",
+      "Agile sprint planning",
+      "Slack",
+    ],
   },
 ];
 
-function FadeIn({ children, index = 0 }: { children: React.ReactNode; index?: number }) {
+function FadeIn({
+  children,
+  index = 0,
+}: {
+  children: React.ReactNode;
+  index?: number;
+}) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false, margin: "-20px" });
   return (
@@ -52,9 +70,13 @@ export function Experience() {
       <div className="max-w-4xl mx-auto">
         <FadeIn index={0}>
           <div className="flex items-center gap-4 mb-16">
-            <span className="text-md font-mono uppercase tracking-[0.3em] text-muted-foreground">02</span>
+            <span className="text-md font-mono uppercase tracking-[0.3em] text-muted-foreground">
+              02
+            </span>
             <Separator className="flex-1 max-w-xs" />
-            <h2 className="text-md font-mono uppercase tracking-[0.3em] text-muted-foreground">Experience</h2>
+            <h2 className="text-md font-mono uppercase tracking-[0.3em] text-muted-foreground">
+              Experience
+            </h2>
           </div>
         </FadeIn>
 
@@ -84,7 +106,13 @@ export function Experience() {
                     <div className="space-y-3">
                       <div>
                         <h3 className="text-base font-semibold">{exp.title}</h3>
-                        <a href="https://mishrawarna.com" target="_blank" className="text-sm text-muted-foreground">{exp.company}</a>
+                        <a
+                          href="https://mishrawarna.com"
+                          target="_blank"
+                          className="text-sm text-muted-foreground"
+                        >
+                          {exp.company}
+                        </a>
                       </div>
 
                       <p className="text-sm text-muted-foreground leading-relaxed">
@@ -93,7 +121,10 @@ export function Experience() {
 
                       <ul className="space-y-1.5">
                         {exp.highlights.map((h) => (
-                          <li key={h} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <li
+                            key={h}
+                            className="flex items-start gap-2 text-sm text-muted-foreground"
+                          >
                             <span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" />
                             {h}
                           </li>
@@ -102,7 +133,11 @@ export function Experience() {
 
                       <div className="flex flex-wrap gap-1.5 pt-1">
                         {exp.tech.map((t) => (
-                          <Badge key={t} variant="secondary" className="text-xs font-mono">
+                          <Badge
+                            key={t}
+                            variant="secondary"
+                            className="text-xs font-mono"
+                          >
                             {t}
                           </Badge>
                         ))}
