@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Skillify",
+    "subtitle": "Career Roadmap Generator",
+    "description": "Skillify is an AI-powered platform transforming how users advance their academic and professional journeys. By analyzing each user’s unique skills, interests, and goals, Skillify creates dynamic, personalized career roadmaps. It helps users identify strengths, close skill gaps, and follow curated learning paths with certifications, all tailored to meet evolving market demands.",
+    "tech": ["Next js", "Typescript", "Mongo DB", "Docker", "OpenAI API"],
+    "icon": "Globe",
+    "featured": true,
+    "githubUrl": "https://github.com/Chirath-Abeymanna/Skillify",
+    "liveUrl": "https://www.skillify.solutions/",
+    "status": "Open Source"
+  },
+  {
+    "title": "Securize",
+    "subtitle": "Cybersecurity analytics platform",
+    "description": "Securize is an AI-powered cybersecurity analytics platform that helps organizations identify and respond to security threats in real-time. It uses machine learning to analyze security events and provide insights into potential vulnerabilities and threats.",
+    "tech": [
+      "Python",
+      "Golang",
+      "PostgreSQL",
+      "Docker",
+      "FastAPI",
+      "GitHub Actions",
+      "Next js",
+      "AWS"
+    ],
+    "icon": "Shield",
+    "featured": false,
+    "githubUrl": null,
+    "liveUrl": null,
+    "status": "Private Beta"
+  },
+  {
+    "title": "TumorSense",
+    "subtitle": "AI-Powered Tumor Detection System",
+    "description": "TumorSense is a Light weight CLI ML model that uses deep learning to detect tumors in using medical data. It mainly targets breast cancer detection and provides insights on whether the tumor is malignant or benign.",
+    "tech": [
+      "Python",
+      "Pytorch",
+      "Numpy",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Scikit-learn"
+    ],
+    "icon": "Brain",
+    "featured": false,
+    "githubUrl": "https://github.com/Chirath-Abeymanna/Cancer_predicting_model",
+    "liveUrl": null,
+    "status": "Open Source"
+  },
+  {
+    "title": "Car Price Prediction model",
+    "subtitle": "Machine Learning model",
+    "description": "Car Price Prediction model is a Light weight CLI ML model that uses deep learning to predict the price of a car based on the features of the car.",
+    "tech": [
+      "Python",
+      "Pytorch",
+      "Numpy",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Scikit-learn"
+    ],
+    "icon": "Lock",
+    "featured": false,
+    "githubUrl": "https://github.com/Chirath-Abeymanna/Car-Price-Predicting-system",
+    "liveUrl": null,
+    "status": "Open Source"
+  },
+  {
+    "title": "Ticketerr",
+    "subtitle": "Ticketing System",
+    "description": "Ticketerr is a movies and tickets booking system that help users to buy tickets and vendors to sell tickets.",
+    "tech": ["Spring Boot", "MySQL", "JSON", "Github Action"],
+    "icon": "CreditCard",
+    "featured": false,
+    "githubUrl": "https://github.com/Chirath-Abeymanna/Real_Time_Ticketing_System",
+    "liveUrl": null,
+    "status": "Open Source"
+  },
+  {
+    "title": "Travel Buddy",
+    "subtitle": "Travel Sharing Site",
+    "description": "Travel Buddy is a comprehensive travel booking system that allows users to search, compare, and add their own experiences.",
+    "tech": ["Next js", "Mongo DB", "Express js", "Github Action"],
+    "icon": "Globe",
+    "featured": false,
+    "githubUrl": "https://github.com/Chirath-Abeymanna/Travel_buddy.git",
+    "liveUrl": "https://travel-buddy-njedte4jx-chiraths-projects-2a419199.vercel.app/",
+    "status": "Open Source"
+  }
+]

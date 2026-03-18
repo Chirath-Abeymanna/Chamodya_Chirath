@@ -1,18 +1,23 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, X } from "lucide-react";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  
+
   // Mouse position tracking for background grid
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!ref.current) return;
@@ -22,14 +27,14 @@ export function Hero() {
       const y = e.clientY - rect.top;
       setMousePosition({ x, y });
     };
-    
+
     const container = ref.current;
     if (container) {
       container.addEventListener("mousemove", handleMouseMove);
       container.addEventListener("mouseenter", () => setIsHovering(true));
       container.addEventListener("mouseleave", () => setIsHovering(false));
     }
-    
+
     return () => {
       if (container) {
         container.removeEventListener("mousemove", handleMouseMove);
@@ -38,7 +43,7 @@ export function Hero() {
       }
     };
   }, []);
-  
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -97,12 +102,12 @@ export function Hero() {
       >
         {/* Static base grid (faint) */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-size-[4rem_4rem] opacity-90 dark:opacity-20" />
-        
+
         {/* Interactive colored grid lines */}
-        <div 
+        <div
           className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
           style={{
-            opacity: isHovering ? 0.3 : 0.1,
+            opacity: isHovering ? 0.2 : 0.1,
             background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.8) 0%, rgba(236, 72, 153, 0.6) 50%, transparent 100%)`,
             WebkitMaskImage: `linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)`,
             WebkitMaskSize: `4rem 4rem`,
@@ -110,13 +115,17 @@ export function Hero() {
             maskSize: `4rem 4rem`,
           }}
         />
-        
+
         {/* Soft glowing aura behind the colored grid lines */}
-        <div 
-          className="absolute inset-0 transition-opacity duration-500 pointer-events-none dark:mix-blend-screen"
+        <div
+          className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
           style={{
             opacity: isHovering ? 0.35 : 0,
-            background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.4) 0%, rgba(236, 72, 153, 0.2) 60%, transparent 100%)`
+            background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(59, 130, 246, 0.4) 0%, rgba(236, 72, 153, 0.2) 60%, transparent 100%)`,
+            WebkitMaskImage: `linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)`,
+            WebkitMaskSize: `4rem 4rem`,
+            maskImage: `linear-gradient(to right, black 1px, transparent 1px), linear-gradient(to bottom, black 1px, transparent 1px)`,
+            maskSize: `4rem 4rem`,
           }}
         />
 
@@ -131,7 +140,6 @@ export function Hero() {
         className="relative z-10 w-full max-w-8xl mx-auto px-6 lg:px-10 py-24 lg:py-20"
       >
         <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-8 lg:gap-14 items-center">
-
           {/* LEFT — Video */}
           <motion.div
             variants={videoVariants}
@@ -222,10 +230,7 @@ export function Hero() {
                 Contact Me
               </Button>
             </motion.div>
-
-
           </motion.div>
-
         </div>
       </motion.div>
 
@@ -242,7 +247,9 @@ export function Hero() {
         >
           <ArrowDown size={16} />
         </motion.div>
-        <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
+        <span className="text-xs font-mono tracking-widest uppercase">
+          Scroll
+        </span>
       </motion.div>
 
       {/* Contact Modal */}
@@ -271,12 +278,15 @@ export function Hero() {
               >
                 <X size={18} />
               </button>
-              
-              <h3 className="text-2xl font-semibold mb-2 tracking-tight">Get in touch</h3>
+
+              <h3 className="text-2xl font-semibold mb-2 tracking-tight">
+                Get in touch
+              </h3>
               <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-                Feel free to reach out to me via email or connect with me on social media. I am always open to new opportunities!
+                Feel free to reach out to me via email or connect with me on
+                social media. I am always open to new opportunities!
               </p>
-              
+
               <div className="flex flex-col gap-3">
                 <a
                   href="mailto:chamodyachirath@gmail.com"
@@ -287,10 +297,12 @@ export function Hero() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm font-medium">Email</span>
-                    <span className="text-xs text-muted-foreground">chamodyachirath@gmail.com</span>
+                    <span className="text-xs text-muted-foreground">
+                      chamodyachirath@gmail.com
+                    </span>
                   </div>
                 </a>
-                
+
                 <a
                   href="https://www.linkedin.com/in/chirath-abeymanna-990700292"
                   target="_blank"
@@ -298,14 +310,19 @@ export function Hero() {
                   className="flex items-center gap-4 rounded-2xl border border-border/40 bg-background/30 p-4 hover:bg-accent/40 hover:border-border transition-all group"
                 >
                   <div className="flex bg-muted rounded-xl p-3 group-hover:bg-[#0A66C2]/10 transition-colors">
-                    <Linkedin size={20} className="text-foreground group-hover:text-[#0A66C2] transition-colors" />
+                    <Linkedin
+                      size={20}
+                      className="text-foreground group-hover:text-[#0A66C2] transition-colors"
+                    />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm font-medium">LinkedIn</span>
-                    <span className="text-xs text-muted-foreground">Chirath Abeymanna</span>
+                    <span className="text-xs text-muted-foreground">
+                      Chirath Abeymanna
+                    </span>
                   </div>
                 </a>
-                
+
                 <a
                   href="https://github.com/Chirath-Abeymanna"
                   target="_blank"
@@ -317,7 +334,9 @@ export function Hero() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-sm font-medium">GitHub</span>
-                    <span className="text-xs text-muted-foreground">Chirath-Abeymanna</span>
+                    <span className="text-xs text-muted-foreground">
+                      Chirath-Abeymanna
+                    </span>
                   </div>
                 </a>
               </div>
