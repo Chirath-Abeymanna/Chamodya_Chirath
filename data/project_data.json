@@ -7,7 +7,7 @@
     "icon": "Globe",
     "featured": true,
     "githubUrl": "https://github.com/Chirath-Abeymanna/Skillify",
-    "liveUrl": "https://www.skillify.solutions/",
+    "liveUrl": "https://skillify-zeta.vercel.app/",
     "status": "Open Source"
   },
   {
@@ -87,7 +87,18 @@
     "icon": "Globe",
     "featured": false,
     "githubUrl": "https://github.com/Chirath-Abeymanna/Travel_buddy.git",
-    "liveUrl": "https://travel-buddy-njedte4jx-chiraths-projects-2a419199.vercel.app/",
+    "liveUrl": "https://travel-buddy-oxs6.vercel.app/",
+    "status": "Open Source"
+  },
+  {
+    "title": "Fitness Center",
+    "subtitle": "Fitness Center Product Site",
+    "description": "Fitness Center is a platform for fitness enthusiasts to discover and book training sessions.",
+    "tech": ["Next js", "Mongo DB", "shad cn", "Github Action"],
+    "icon": "Globe",
+    "featured": false,
+    "githubUrl": "https://github.com/Chirath-Abeymanna/Fitness_World.git",
+    "liveUrl": "https://fitness-world-one.vercel.app/",
     "status": "Open Source"
   }
 ]

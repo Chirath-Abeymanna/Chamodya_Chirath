@@ -10,9 +10,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, X } from "lucide-react";
 
-export function Hero() {
+type HeroProps = {
+  onVideoReady?: () => void;
+};
+
+export function Hero({ onVideoReady }: HeroProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const hasNotifiedVideoReady = useRef(false);
 
   // Mouse position tracking for background grid
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -54,6 +59,14 @@ export function Hero() {
 
   const handleScroll = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const notifyVideoReady = () => {
+    if (hasNotifiedVideoReady.current) {
+      return;
+    }
+    hasNotifiedVideoReady.current = true;
+    onVideoReady?.();
   };
 
   const containerVariants = {
@@ -157,6 +170,9 @@ export function Hero() {
                   loop
                   muted
                   playsInline
+                  onLoadedData={notifyVideoReady}
+                  onCanPlayThrough={notifyVideoReady}
+                  onError={notifyVideoReady}
                   className="absolute inset-0 w-[98%] scale-105 h-full object-cover hover:scale-110 transition-all duration-800 ease-in-out "
                 />
               </div>
